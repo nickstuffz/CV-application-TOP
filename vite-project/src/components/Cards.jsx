@@ -1,11 +1,21 @@
 import { useState } from "react";
 
-function ControlledInput({}) {
-  const [value, setValue] = useState("potato");
+function Input({ id, type }) {
+  const [value, setValue] = useState("");
 
+  if (id === "description") {
+    return (
+      <textarea
+        id={id}
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+      />
+    );
+  }
   return (
     <input
-      type="text"
+      id={id}
+      type={type}
       value={value}
       onChange={(event) => setValue(event.target.value)}
     />
@@ -16,7 +26,7 @@ function InputPair({ name, id, type }) {
   return (
     <div className="flex flex-col">
       <label htmlFor={id}>{name}</label>
-      <input id={id} type={type}></input>
+      <Input id={id} type={type} />
     </div>
   );
 }
@@ -31,8 +41,6 @@ function Card({ id, children }) {
 function Sidebar() {
   return (
     <>
-      <ControlledInput />
-
       <Card id="personal-info">
         <h1 className="pb-2">Personal Information</h1>
         <InputPair name="Full Name" id="full_name" type="text" />
@@ -55,10 +63,7 @@ function Sidebar() {
         <InputPair name="Position" id="position" type="text" />
         <InputPair name="Start" id="exp-start" type="month" />
         <InputPair name="End" id="exp-end" type="month" />
-        <div className="flex flex-col">
-          <label htmlFor="description">Description</label>
-          <textarea id="description" defaultValue={""} />
-        </div>
+        <InputPair name="Description" id="description" />
       </Card>
     </>
   );
