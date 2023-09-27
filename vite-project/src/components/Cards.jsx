@@ -1,69 +1,65 @@
+import { useState } from "react";
+
+function ControlledInput({}) {
+  const [value, setValue] = useState("potato");
+
+  return (
+    <input
+      type="text"
+      value={value}
+      onChange={(event) => setValue(event.target.value)}
+    />
+  );
+}
+
+function InputPair({ name, id, type }) {
+  return (
+    <div className="flex flex-col">
+      <label htmlFor={id}>{name}</label>
+      <input id={id} type={type}></input>
+    </div>
+  );
+}
+function Card({ id, children }) {
+  return (
+    <section id={id} className="card border-4 p-4">
+      {children}
+    </section>
+  );
+}
+
 function Sidebar() {
   return (
     <>
-      <section id="personal-info" class="card border-4 p-4">
-        <h1 class="pb-2">Personal Information</h1>
-        <div class="flex flex-col">
-          <label for="full_name">Full Name</label>
-          <input id="full_name" type="text" />
-        </div>
-        <div class="flex flex-col">
-          <label for="email">Email</label>
-          <input id="email" type="email" />
-        </div>
-        <div class="flex flex-col">
-          <label for="address">Address</label>
-          <input id="address" type="text" />
-        </div>
-        <div class="flex flex-col">
-          <label for="phone_number">Phone Number</label>
-          <input id="phone_number" type="tel" />
-        </div>
-      </section>
+      <ControlledInput />
 
-      <section id="education" class="card border-4 p-4">
-        <h1 class="pb-2">Education</h1>
-        <div class="flex flex-col">
-          <label for="school">School</label>
-          <input id="school" type="text" />
-        </div>
-        <div class="flex flex-col">
-          <label for="program">Program</label>
-          <input id="program" type="text" />
-        </div>
-        <div class="flex flex-col">
-          <label for="edu-start">Start</label>
-          <input id="edu-start" type="month" />
-        </div>
-        <div class="flex flex-col">
-          <label for="edu-end">End</label>
-          <input id="edu-end" type="month" />
-        </div>
-      </section>
+      <Card id="personal-info">
+        <h1 className="pb-2">Personal Information</h1>
+        <InputPair name="Full Name" id="full_name" type="text" />
+        <InputPair name="Email" id="email" type="email" />
+        <InputPair name="Address" id="address" type="text" />
+        <InputPair name="Phone Number" id="phone_number" type="tel" />
+      </Card>
 
-      <section id="experience" class="card border-4 p-4">
-        <h1 class="pb-2">Experience</h1>
-        <div class="flex flex-col">
-          <label for="company">Company</label>
-          <input id="company" type="text" />
+      <Card id="education">
+        <h1 className="pb-2">Education</h1>
+        <InputPair name="School" id="school" type="text" />
+        <InputPair name="Program" id="program" type="text" />
+        <InputPair name="Start" id="edu-start" type="month" />
+        <InputPair name="End" id="edu-end" type="month" />
+      </Card>
+
+      <Card id="experience">
+        <h1 className="pb-2">Experience</h1>
+        <InputPair name="Organization" id="organization" type="text" />
+        <InputPair name="Position" id="position" type="text" />
+        <InputPair name="Start" id="exp-start" type="month" />
+        <InputPair name="End" id="exp-end" type="month" />
+        <div className="flex flex-col">
+          <label htmlFor="description">Description</label>
+          <textarea id="description" defaultValue={""} />
         </div>
-        <div class="flex flex-col">
-          <label for="position">Position</label>
-          <input id="position" type="text" />
-        </div>
-        <div class="flex flex-col">
-          <label for="exp-start">Start</label>
-          <input id="exp-start" type="month" />
-        </div>
-        <div class="flex flex-col">
-          <label for="exp-end">End</label>
-          <input id="exp-end" type="month" />
-        </div>
-        <div class="flex flex-col">
-          <label for="description">Description</label>
-          <textarea id="description"></textarea>
-        </div>
-      </section>
+      </Card>
     </>
   );
 }
