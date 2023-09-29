@@ -1,0 +1,14 @@
+Next: CV Document
+
+Have a normal letter sized right bar rendered as a React App
+-Takes values from live inputs
+-Sorts them into proper place on page
+-Styles them properly
+
+*maybe look into how to save doc as pdf implementation? would maybe require a text editor, could change project, LOOK INTO FIRST
+
+*maybe use local storage
+
+*media queries
+
+*textarea stores as raw HTML? is that an issue?

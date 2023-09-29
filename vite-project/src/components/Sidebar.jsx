@@ -32,7 +32,7 @@ function InputPair({ name, id, type }) {
 }
 function Card({ id, children }) {
   return (
-    <section id={id} className="card border-4 p-4">
+    <section id={id} className="card mb-6 border-4 p-4">
       {children}
     </section>
   );
@@ -40,7 +40,7 @@ function Card({ id, children }) {
 
 function Sidebar() {
   return (
-    <>
+    <div id="sidebar" className="w-96">
       <Card id="personal-info">
         <h1 className="pb-2">Personal Information</h1>
         <InputPair name="Full Name" id="full_name" type="text" />
@@ -58,15 +58,15 @@ function Sidebar() {
       </Card>
 
       <Card id="experience">
-        <h1 className="pb-2">Experience</h1>
+        <h1>Experience</h1>
         <InputPair name="Organization" id="organization" type="text" />
         <InputPair name="Position" id="position" type="text" />
         <InputPair name="Start" id="exp-start" type="month" />
         <InputPair name="End" id="exp-end" type="month" />
         <InputPair name="Description" id="description" />
       </Card>
-    </>
+    </div>
   );
 }
 
-export { Sidebar };
+export default Sidebar;
