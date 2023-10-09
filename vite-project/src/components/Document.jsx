@@ -1,41 +1,44 @@
-function Personal() {
+function Personal({ data }) {
   return (
     <>
-      <h1>Nicholas Ng</h1>
-      <p>nicholasng62@gmail.com</p>
-      <p>267 Central Ave</p>
-      <p>206-407-9766</p>
+      <h1>{data.full_name}</h1>
+      <p>{data.email}</p>
+      <p>{data.address}</p>
+      <p>{data.phone_number}</p>
     </>
   );
 }
 
-function Education() {
+function Education({ data }) {
   return (
     <>
-      <h3>University of Washington</h3>
-      <p>Mechanical Engineering</p>
-      <p>September 2016 - June 2021</p>
+      <h3>{data.school}</h3>
+      <p>{data.program}</p>
+      <p>{data.edu_start}</p>
+      <p>{data.edu_end}</p>
     </>
   );
 }
 
-function Experience() {
+function Experience({ data }) {
   return (
     <>
-      <h3>New Wheel</h3>
-      <p>Mechanic</p>
-      <p>September 2016 - June 2021</p>
+      <h3>{data.organization}</h3>
+      <p>{data.position}</p>
+      <p>{data.exp_start}</p>
+      <p>{data.exp_end}</p>
+      <p>{data.description}</p>
     </>
   );
 }
 
-function Document({ personalData, educationData, experienceData }) {
+function Document({ data }) {
   return (
     <div id="document">
       <section id="page" className="aspect-[0.7071067811] h-full border-2">
-        <Personal />
-        <Education />
-        <Experience />
+        <Personal data={data} />
+        <Education data={data} />
+        <Experience data={data} />
       </section>
     </div>
   );

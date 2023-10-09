@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Sidebar from "./components/Sidebar.jsx";
 import Document from "./components/Document.jsx";
+import { defaultData } from "./assets/defaultData.js";
 
 function App() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState(defaultData);
 
   function handleChange(event, id) {
     const inputValue = event.target.value;
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="flex gap-40">
       <Sidebar handleChange={handleChange} />
-      <Document />
+      <Document data={data} />
     </div>
   );
 }

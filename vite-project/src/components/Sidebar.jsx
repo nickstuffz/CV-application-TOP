@@ -26,7 +26,7 @@ function Card({ id, children }) {
 function Sidebar({ handleChange }) {
   return (
     <div id="sidebar" className="w-96">
-      <Card id="personal-info">
+      <Card id="personal_info">
         <h1 className="pb-2">Personal Information</h1>
         <InputPair
           name="Full Name"
@@ -70,13 +70,13 @@ function Sidebar({ handleChange }) {
         />
         <InputPair
           name="Start"
-          id="edu-start"
+          id="edu_start"
           type="month"
           handleChange={handleChange}
         />
         <InputPair
           name="End"
-          id="edu-end"
+          id="edu_end"
           type="month"
           handleChange={handleChange}
         />
@@ -98,13 +98,13 @@ function Sidebar({ handleChange }) {
         />
         <InputPair
           name="Start"
-          id="exp-start"
+          id="exp_start"
           type="month"
           handleChange={handleChange}
         />
         <InputPair
           name="End"
-          id="exp-end"
+          id="exp_end"
           type="month"
           handleChange={handleChange}
         />
