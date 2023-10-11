@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Sidebar from "./components/Sidebar.jsx";
 import Document from "./components/Document.jsx";
+import SavePDF from "./components/SavePDF.jsx";
 import { defaultData } from "./assets/defaultData.js";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <div className="flex gap-40">
       <Sidebar handleChange={handleChange} />
       <Document data={data} />
+      <SavePDF />
     </div>
   );
 }

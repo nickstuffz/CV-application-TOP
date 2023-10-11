@@ -34,12 +34,13 @@ function Experience({ data }) {
 
 function Document({ data }) {
   return (
-    <div id="document">
-      <section id="page" className="aspect-[0.7071067811] h-full border-2">
-        <Personal data={data} />
-        <Education data={data} />
-        <Experience data={data} />
-      </section>
+    <div
+      id="document"
+      className="aspect-[0.7071067811] h-full bg-white text-black"
+    >
+      <Personal data={data} />
+      <Education data={data} />
+      <Experience data={data} />
     </div>
   );
 }
