@@ -36,7 +36,7 @@ function Document({ data }) {
   return (
     <div
       id="document"
-      className="aspect-[0.7071067811] h-full bg-white text-black"
+      className="aspect-[0.7071067811] h-3/4 bg-white text-black"
     >
       <Personal data={data} />
       <Education data={data} />
@@ -44,5 +44,7 @@ function Document({ data }) {
     </div>
   );
 }
+
+// A4: aspect-[0.7071067811]
 
 export default Document;

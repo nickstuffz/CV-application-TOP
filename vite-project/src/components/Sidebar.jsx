@@ -41,7 +41,7 @@ function Card({ id, children }) {
 
 function Sidebar({ handleChange }) {
   return (
-    <div id="sidebar" className="w-96">
+    <div id="sidebar" className="flex w-96 flex-col gap-4">
       <Card id="personal_info">
         <h1 className="pb-2">Personal Information</h1>
         <InputPair

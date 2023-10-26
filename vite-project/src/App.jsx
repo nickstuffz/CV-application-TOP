@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <div className="flex gap-40">
+    <div className="flex h-screen w-screen gap-40">
       <Sidebar handleChange={handleChange} />
       <Document data={data} />
       <SavePDF />
